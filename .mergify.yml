@@ -15,6 +15,9 @@ merge_protections_settings:
   auto_merge_conditions:
     - base = main
     - -draft
+    - or:
+        - author != wiseware-renovate[bot]
+        - label = automerge
 
 pull_request_rules:
   - name: squash a multi-commit pull request on its own branch
