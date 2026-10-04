@@ -10,9 +10,6 @@ queue_rules:
     queue_conditions:
       - "#commits = 1"
       - -draft
-    merge_conditions:
-      - "#check-pending = 0"
-      - "#check-failure = 0"
 
 merge_protections_settings:
   auto_merge_conditions:
