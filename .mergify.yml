@@ -29,3 +29,4 @@ pull_request_rules:
     actions:
       squash:
         commit_message: all-commits
+        bot_account: tjwise99
