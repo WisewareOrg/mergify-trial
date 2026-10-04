@@ -1,0 +1,21 @@
+name: ci
+on:
+  pull_request:
+permissions: {}
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: test ! -e RED
+  bench-pending:
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - run: gh api "repos/$GITHUB_REPOSITORY/statuses/$SHA" -f state=pending -f context=bench -f description="awaiting the build host"

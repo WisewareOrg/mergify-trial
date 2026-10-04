@@ -1,0 +1,30 @@
+merge_queue:
+  max_parallel_checks: 1
+
+queue_rules:
+  - name: default
+    merge_method: fast-forward
+    update_method: rebase
+    batch_size: 1
+    checking_label: mergify-checking
+    queue_conditions:
+      - "#commits = 1"
+      - -draft
+    merge_conditions:
+      - "#check-pending = 0"
+      - "#check-failure = 0"
+
+merge_protections_settings:
+  auto_merge_conditions:
+    - base = main
+    - -draft
+
+pull_request_rules:
+  - name: squash a multi-commit pull request on its own branch
+    conditions:
+      - base = main
+      - -draft
+      - "#commits > 1"
+    actions:
+      squash:
+        commit_message: all-commits
