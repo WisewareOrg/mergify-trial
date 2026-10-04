@@ -22,5 +22,8 @@
   ],
   "rebaseWhen": "conflicted",
   "prCreation": "immediate",
-  "internalChecksFilter": "strict"
+  "internalChecksFilter": "strict",
+  "gitIgnoredAuthors": [
+    "47094117+tjwise99@users.noreply.github.com"
+  ]
 }
