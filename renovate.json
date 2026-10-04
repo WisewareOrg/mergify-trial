@@ -1,12 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>WisewareOrg/wise-renovate#v1.6.0"],
+  "extends": [
+    "github>WisewareOrg/wise-renovate#v1.6.0"
+  ],
   "platformAutomerge": false,
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest", "lockFileMaintenance"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance"
+      ],
       "automerge": false,
-      "addLabels": ["automerge"]
+      "addLabels": [
+        "automerge"
+      ]
     }
-  ]
+  ],
+  "rebaseWhen": "conflicted"
 }
