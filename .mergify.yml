@@ -1,12 +1,12 @@
 merge_queue:
   max_parallel_checks: 1
+  checking_label: mergify-checking
 
 queue_rules:
   - name: default
     merge_method: fast-forward
     update_method: rebase
     batch_size: 1
-    checking_label: mergify-checking
     queue_conditions:
       - "#commits = 1"
       - -draft
