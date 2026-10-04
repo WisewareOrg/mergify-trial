@@ -20,5 +20,7 @@
       ]
     }
   ],
-  "rebaseWhen": "conflicted"
+  "rebaseWhen": "conflicted",
+  "prCreation": "immediate",
+  "internalChecksFilter": "strict"
 }
