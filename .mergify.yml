@@ -6,9 +6,19 @@ queue_rules:
   - name: default
     merge_method: fast-forward
     update_method: rebase
+    batch_size: 1
+    queue_conditions:
+      - author != wiseware-renovate[bot]
+      - "#commits = 1"
+      - -draft
+
+  - name: renovate
+    merge_method: fast-forward
+    update_method: rebase
     update_bot_account: tjwise99
     batch_size: 1
     queue_conditions:
+      - author = wiseware-renovate[bot]
       - "#commits = 1"
       - -draft
 
@@ -26,6 +36,17 @@ pull_request_rules:
       - base = main
       - -draft
       - "#commits > 1"
+      - author != wiseware-renovate[bot]
+    actions:
+      squash:
+        commit_message: all-commits
+
+  - name: squash a multi-commit Renovate pull request as a user
+    conditions:
+      - base = main
+      - -draft
+      - "#commits > 1"
+      - author = wiseware-renovate[bot]
     actions:
       squash:
         commit_message: all-commits
