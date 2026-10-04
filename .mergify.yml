@@ -6,6 +6,7 @@ queue_rules:
   - name: default
     merge_method: fast-forward
     update_method: rebase
+    update_bot_account: tjwise99
     batch_size: 1
     queue_conditions:
       - "#commits = 1"
