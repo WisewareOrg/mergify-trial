@@ -34,7 +34,7 @@ pull_request_rules:
   - name: hand a Renovate pull request to whoever commits to it
     conditions:
       - author = wiseware-renovate[bot]
-      - commits[*].author != wiseware-renovate[bot]
+      - "#commits > 1"
     actions:
       label:
         add:
