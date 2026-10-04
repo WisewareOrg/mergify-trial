@@ -7,6 +7,7 @@ queue_rules:
     merge_method: fast-forward
     update_method: rebase
     batch_size: 1
+    branch_protection_injection_mode: merge
     queue_conditions:
       - "#commits = 1"
       - -draft
