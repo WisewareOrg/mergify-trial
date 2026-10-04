@@ -1,7 +1,6 @@
 merge_queue:
   max_parallel_checks: 1
   checking_label: mergify-checking
-  not_a_real_key: true
 
 queue_rules:
   - name: default
