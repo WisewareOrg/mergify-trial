@@ -26,7 +26,16 @@ pull_request_rules:
       - base = main
       - -draft
       - "#commits > 1"
-      - author != wiseware-renovate[bot]
     actions:
       squash:
         commit_message: all-commits
+        bot_account: tjwise99
+
+  - name: hand a Renovate pull request to whoever commits to it
+    conditions:
+      - author = wiseware-renovate[bot]
+      - commits[*].author != wiseware-renovate[bot]
+    actions:
+      label:
+        add:
+          - stop-updating
