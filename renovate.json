@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>WisewareOrg/wise-renovate#v1.6.0"
+    "github>WisewareOrg/wise-renovate#v1.7.0"
   ],
   "platformAutomerge": false,
   "packageRules": [
